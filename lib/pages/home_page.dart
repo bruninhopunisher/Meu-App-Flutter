@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/pages/login_page.dart';
+import 'package:meuprimeiroapp/pages/profile_person.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
-  final String _nome = 'Bruno';
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final String _nome = 'Usuário Teste';
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +49,14 @@ class HomePage extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfilePerson(),
+                        ),
+                      );
+                    },
                   ),
                   const Padding(padding: EdgeInsets.only(top: 25)),
                   ListTile(
@@ -65,11 +79,12 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pushReplacement(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const LoginPage(),
                         ),
+                        (route) => false,
                       );
                     },
                   )
@@ -84,7 +99,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Home Page',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
             textAlign: TextAlign.center,
           ),
         ],
