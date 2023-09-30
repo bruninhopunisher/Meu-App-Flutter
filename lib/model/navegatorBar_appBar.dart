@@ -17,6 +17,8 @@ class BarraNavegacao extends StatefulWidget {
 
 class _BottomNavigationBarExampleState extends State<BarraNavegacao> {
   int _selectedIndex = 0;
+  final String _name = 'Bruno';
+
   static final List<Widget> _widgetOptions = <Widget>[
     FutureBuilder<CardPage>(
       future: getChamaPagina(),
@@ -40,7 +42,7 @@ class _BottomNavigationBarExampleState extends State<BarraNavegacao> {
           extendBody: true,
           backgroundColor: const Color(0xFF820AD1),
           appBar: AppBar(
-            title: const Text('Olá, '),
+            title: Text('Olá, $_name'),
             titleTextStyle: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
