@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/navegatorBar_appBar.dart';
+import 'package:meuprimeiroapp/services/app_storage.dart';
 import 'package:meuprimeiroapp/shared/widget/progress_indicator_page.dart';
 import 'package:meuprimeiroapp/shared/widget/text_label.dart';
 
@@ -11,6 +12,8 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  AppStorageService storage = AppStorageService();
+
   final TextEditingController _controllerRegisterEmail =
       TextEditingController();
   final TextEditingController _controllerRegisterName = TextEditingController();
@@ -227,7 +230,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     Container(
                       margin: const EdgeInsets.fromLTRB(40, 30, 0, 0),
                       child: TextLabel(
-                          texto: 'Selecione seu número:  ${_idade.round()}'),
+                          texto:
+                              'Selecione um número qualquer:  ${_idade.round()}'),
                     ),
                     Slider(
                       min: 0,
@@ -266,7 +270,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
+                          FocusManager.instance.primaryFocus?.unfocus();
                           if (_controllerRegisterName.text.trim().isEmpty) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
@@ -314,17 +319,27 @@ class _RegisterPageState extends State<RegisterPage> {
                             return;
                           }
                           setState(() {
-                            _salvar = true;
+                            _salvar = false;
                           });
-                          Future.delayed(const Duration(seconds: 5), () {
+
+                          await storage.setDadosCadastraisNome(
+                              _controllerRegisterName.text.trim());
+                          await storage.setDadosCadastraisEmail(
+                              _controllerRegisterEmail.text.trim());
+                          await storage.setDadosCadastraisDataNascimento(
+                              dataNascimento!);
+                          await storage.setDadosCadastraisSenha(
+                              _controllerRegisterPassword.text.trim());
+                          await storage
+                              .setDadosCadastraisNumeroQualquer(_idade.round());
+
+                          Future.delayed(const Duration(seconds: 3), () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text('Usuário cadastrado com sucesso'),
                               ),
                             );
-                            setState(() {
-                              _salvar = false;
-                            });
+
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(

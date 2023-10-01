@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/pages/login_page.dart';
+import 'package:meuprimeiroapp/pages/numeros_aleatorios_page.dart';
 import 'package:meuprimeiroapp/pages/profile_person.dart';
+import 'package:meuprimeiroapp/pages/settings_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -34,10 +36,49 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
+                    Navigator.pop(context);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const ProfilePerson(),
+                      ),
+                    );
+                  },
+                ),
+                const Padding(padding: EdgeInsets.only(top: 25)),
+                ListTile(
+                  leading: const Icon(Icons.settings),
+                  title: const Text(
+                    'Configurações',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ConfiguracoesPage(),
+                      ),
+                    );
+                  },
+                ),
+                const Padding(padding: EdgeInsets.only(top: 25)),
+                ListTile(
+                  leading: const Icon(Icons.numbers),
+                  title: const Text(
+                    'Gerador de Números',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NumerosAleatoriosPage(),
                       ),
                     );
                   },

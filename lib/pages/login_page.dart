@@ -34,91 +34,90 @@ class _LoginPageState extends State<LoginPage> {
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height,
           ),
-          child: Column(
-            children: [
-              Flexible(
-                flex: 66,
-                child: Container(
-                  margin: const EdgeInsets.only(top: 50),
-                  child: Image.asset(
-                    'assets/diver.png',
-                    width: 200,
-                    height: 200,
+          child: Center(
+            child: Column(
+              children: [
+                Flexible(
+                  flex: 66,
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 50),
+                    child: Image.asset(
+                      'assets/diver.png',
+                      width: 200,
+                      height: 200,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15, 30, 15, 0),
-                child: TextField(
-                  controller: _controllerEmail,
-                  decoration: const InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 2,
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15, 30, 15, 0),
+                  child: TextField(
+                    controller: _controllerEmail,
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 2,
+                        ),
                       ),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                      ),
+                      hintText: AutofillHints.email,
+                      hintStyle: TextStyle(
                         color: Colors.white,
                       ),
+                      contentPadding: EdgeInsets.fromLTRB(40, 0, 40, 15),
                     ),
-                    hintText: AutofillHints.email,
-                    hintStyle: TextStyle(
+                    style: const TextStyle(
+                      fontSize: 20,
                       color: Colors.white,
+                      fontWeight: FontWeight.bold,
                     ),
-                    contentPadding: EdgeInsets.fromLTRB(40, 0, 40, 15),
-                  ),
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15, 30, 15, 0),
-                child: TextField(
-                  controller: _controllerPassword,
-                  obscureText: _isObscure,
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      icon: Image.asset(_isObscure
-                          ? 'assets/olho_fechado.png'
-                          : 'assets/olho_aberto.png'),
-                      onPressed: () {
-                        setState(() {
-                          _isObscure = !_isObscure;
-                        });
-                      },
-                    ),
-                    enabledBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 2,
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15, 30, 15, 0),
+                  child: TextField(
+                    controller: _controllerPassword,
+                    obscureText: _isObscure,
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        icon: Image.asset(_isObscure
+                            ? 'assets/olho_fechado.png'
+                            : 'assets/olho_aberto.png'),
+                        onPressed: () {
+                          setState(() {
+                            _isObscure = !_isObscure;
+                          });
+                        },
                       ),
+                      enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 2,
+                        ),
+                      ),
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      hintStyle: const TextStyle(
+                        color: Colors.white,
+                      ),
+                      hintText: AutofillHints.password,
+                      contentPadding: const EdgeInsets.fromLTRB(40, 0, 40, 15),
                     ),
-                    focusedBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    hintStyle: const TextStyle(
+                    style: const TextStyle(
+                      fontSize: 20,
                       color: Colors.white,
+                      fontWeight: FontWeight.bold,
                     ),
-                    hintText: AutofillHints.password,
-                    contentPadding: const EdgeInsets.fromLTRB(40, 0, 40, 15),
-                  ),
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.05),
-                child: Flexible(
-                  flex: 30,
+                Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.05),
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: const MaterialStatePropertyAll<EdgeInsets>(
@@ -149,11 +148,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20),
-                child: Flexible(
-                  flex: 30,
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: const MaterialStatePropertyAll<EdgeInsets>(
@@ -184,8 +180,8 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

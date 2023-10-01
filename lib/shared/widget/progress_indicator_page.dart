@@ -13,6 +13,17 @@ class _ProgressIndicatorPageState extends State<ProgressIndicatorPage> {
   bool carregando = false;
   int progresso = 0;
 
+  Future<void> _iniciarCarregamentoAutomatico() async {
+    for (int i = 0; i <= 100; i++) {
+      await Future.delayed(const Duration(milliseconds: 25));
+      if (mounted) {
+        setState(() {
+          progresso = i;
+        });
+      }
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -49,14 +60,5 @@ class _ProgressIndicatorPageState extends State<ProgressIndicatorPage> {
         ],
       ),
     );
-  }
-
-  Future<void> _iniciarCarregamentoAutomatico() async {
-    for (int i = 0; i <= 100; i++) {
-      await Future.delayed(const Duration(milliseconds: 25));
-      setState(() {
-        progresso = i;
-      });
-    }
   }
 }

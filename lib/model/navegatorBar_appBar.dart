@@ -76,7 +76,7 @@ class _BottomNavigationBarExampleState extends State<BarraNavegacao> {
                 activeColor: Colors.black,
                 iconSize: 24,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                 duration: const Duration(milliseconds: 100),
                 tabBackgroundColor: Colors.grey[100]!,
                 color: Colors.white,
