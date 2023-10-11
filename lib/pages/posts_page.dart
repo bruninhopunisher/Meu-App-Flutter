@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/post_model.dart';
 import 'package:meuprimeiroapp/pages/comments_page.dart';
-import 'package:meuprimeiroapp/repository/posts_repository.dart';
+import 'package:meuprimeiroapp/repository/http/posts_repository.dart';
 
 class PostsPage extends StatefulWidget {
   const PostsPage({super.key});
@@ -11,7 +11,7 @@ class PostsPage extends StatefulWidget {
 }
 
 class _PostsPageState extends State<PostsPage> {
-  var postsRepository = PostsRepository();
+  var postsRepository = PostsHTTPRepository();
   var posts = <PostModel>[];
 
   @override

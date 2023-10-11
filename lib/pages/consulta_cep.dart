@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/viacep_model.dart';
-import 'package:meuprimeiroapp/repository/via_cep_repository.dart';
+import 'package:meuprimeiroapp/repository/http/via_cep_repository.dart';
 
 class ConsultaCEP extends StatefulWidget {
   const ConsultaCEP({super.key});
@@ -13,7 +13,7 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
   final TextEditingController _controllerCEP = TextEditingController();
   bool loading = false;
   var viacepModel = ViaCEPModel();
-  var viaCepRepository = ViaCepRepository();
+  var viaCepRepository = ViaCepHTTPRepository();
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:meuprimeiroapp/pages/card_page.dart';
-import 'package:meuprimeiroapp/pages/comments_page.dart';
 import 'package:meuprimeiroapp/pages/consulta_cep.dart';
 import 'package:meuprimeiroapp/pages/image_page.dart';
 import 'package:meuprimeiroapp/pages/posts_page.dart';

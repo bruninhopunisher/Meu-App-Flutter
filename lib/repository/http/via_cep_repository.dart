@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:meuprimeiroapp/model/viacep_model.dart';
 
-class ViaCepRepository {
+class ViaCepHTTPRepository {
   Future<ViaCEPModel> consultarCEP(String cep) async {
     var response =
         await http.get(Uri.parse('https://viacep.com.br/ws/$cep/json/'));
