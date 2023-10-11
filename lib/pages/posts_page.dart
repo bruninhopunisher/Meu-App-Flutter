@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/post_model.dart';
+import 'package:meuprimeiroapp/pages/comments_page.dart';
 import 'package:meuprimeiroapp/repository/posts_repository.dart';
 
 class PostsPage extends StatefulWidget {
@@ -35,23 +36,34 @@ class _PostsPageState extends State<PostsPage> {
         child: ListView.builder(
             itemCount: posts.length,
             itemBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.all(20),
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20, bottom: 20),
-                    child: ListTile(
-                      title: Text(
-                        posts[index].title,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+              var post = posts[index];
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => CommentsPage(postId: post.id),
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: const EdgeInsets.all(20),
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 20, bottom: 20),
+                      child: ListTile(
+                        title: Text(
+                          posts[index].title,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      subtitle: Text(
-                        posts[index].body,
-                        style: const TextStyle(
-                          fontSize: 16,
+                        subtitle: Text(
+                          posts[index].body,
+                          style: const TextStyle(
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),

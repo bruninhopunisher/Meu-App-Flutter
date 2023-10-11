@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meuprimeiroapp/model/navegatorBar_appBar.dart';
+import 'package:meuprimeiroapp/shared/widget/navegatorBar_appBar.dart';
 import 'package:meuprimeiroapp/services/app_storage.dart';
 import 'package:meuprimeiroapp/shared/widget/progress_indicator_page.dart';
 import 'package:meuprimeiroapp/shared/widget/text_label.dart';
