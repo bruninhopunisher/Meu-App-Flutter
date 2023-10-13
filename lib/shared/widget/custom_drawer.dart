@@ -35,7 +35,7 @@ class CustomDrawer extends StatelessWidget {
                       fontSize: 20,
                     ),
                   ),
-                  onTap: () {
+                  onTap: () async {
                     Navigator.pop(context);
                     Navigator.push(
                       context,

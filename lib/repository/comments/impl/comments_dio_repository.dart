@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:meuprimeiroapp/model/comment_model.dart';
 import 'package:meuprimeiroapp/repository/comments/comments_repository.dart';
 import 'package:meuprimeiroapp/repository/jsonplaceholder_custom_dio.dart';
