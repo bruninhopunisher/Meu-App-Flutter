@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/post_model.dart';
 import 'package:meuprimeiroapp/pages/comments_page.dart';
-import 'package:meuprimeiroapp/repository/http/posts_repository.dart';
+import 'package:meuprimeiroapp/repository/posts/impl/posts_http_repository.dart';
 
 class PostsPage extends StatefulWidget {
   const PostsPage({super.key});

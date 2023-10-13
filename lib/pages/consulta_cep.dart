@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/viacep_model.dart';
-import 'package:meuprimeiroapp/repository/http/via_cep_repository.dart';
+import 'package:meuprimeiroapp/repository/posts/impl/via_cep_repository_http.dart';
 
 class ConsultaCEP extends StatefulWidget {
   const ConsultaCEP({super.key});

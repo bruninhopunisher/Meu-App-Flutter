@@ -1,18 +1,18 @@
-class CommentsModel {
+class CommentModel {
   int postId = 0;
   int id = 0;
   String name = '';
   String email = '';
   String body = '';
 
-  CommentsModel(
+  CommentModel(
       {required this.postId,
       required this.id,
       required this.name,
       required this.email,
       required this.body});
 
-  CommentsModel.fromJson(Map<String, dynamic> json) {
+  CommentModel.fromJson(Map<String, dynamic> json) {
     postId = json['postId'];
     id = json['id'];
     name = json['name'];
@@ -21,12 +21,12 @@ class CommentsModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['postId'] = this.postId;
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['body'] = this.body;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['postId'] = postId;
+    data['id'] = id;
+    data['name'] = name;
+    data['email'] = email;
+    data['body'] = body;
     return data;
   }
 }

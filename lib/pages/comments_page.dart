@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/comment_model.dart';
-import 'package:meuprimeiroapp/repository/http/comments_repository.dart';
+import 'package:meuprimeiroapp/repository/comments/comments_repository.dart';
+import 'package:meuprimeiroapp/repository/comments/impl/comments_dio_repository.dart';
 import 'package:meuprimeiroapp/shared/widget/progress_indicator_page.dart';
 
 class CommentsPage extends StatefulWidget {
@@ -15,17 +16,18 @@ class CommentsPage extends StatefulWidget {
 }
 
 class _CommentsPageState extends State<CommentsPage> {
-  var commentsRepository = CommentsHTTPRepository();
-  var comments = <CommentsModel>[];
+  late CommentsRepository commentsRepository;
+  var comments = <CommentModel>[];
 
   @override
   void initState() {
     super.initState();
+    commentsRepository = CommentsDioRepository();
     carregarDados();
   }
 
   carregarDados() async {
-    comments = await commentsRepository.getComentarios(widget.postId);
+    comments = await commentsRepository.retornaComentarios(widget.postId);
     setState(() {});
   }
 

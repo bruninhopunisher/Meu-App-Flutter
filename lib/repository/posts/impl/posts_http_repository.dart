@@ -2,8 +2,10 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:meuprimeiroapp/model/post_model.dart';
+import 'package:meuprimeiroapp/repository/posts_reposotory.dart';
 
-class PostsHTTPRepository {
+class PostsHTTPRepository implements PostsRepository {
+  @override
   Future<List<PostModel>> getPosts() async {
     var response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
