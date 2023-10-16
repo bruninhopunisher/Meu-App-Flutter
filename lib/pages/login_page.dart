@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meuprimeiroapp/shared/widget/navegatorBar_appBar.dart';
+import '../../widget/navegatorBar_appBar.dart';
 import 'package:meuprimeiroapp/pages/register_page.dart';
 
 class LoginPage extends StatefulWidget {

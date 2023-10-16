@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:meuprimeiroapp/pages/login_page.dart';
 import 'package:meuprimeiroapp/pages/numeros_aleatorios_page.dart';
 import 'package:meuprimeiroapp/pages/profile_person.dart';
@@ -28,7 +29,11 @@ class CustomDrawer extends StatelessWidget {
             child: ListBody(
               children: [
                 ListTile(
-                  leading: const Icon(Icons.person),
+                  leading: const FaIcon(
+                    FontAwesomeIcons.userNinja,
+                    color: Colors.green,
+                    size: 25,
+                  ),
                   title: const Text(
                     'Meu Perfil',
                     style: TextStyle(

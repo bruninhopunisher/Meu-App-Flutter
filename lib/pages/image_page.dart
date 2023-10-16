@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/repository/image_repository.dart';
-import 'package:meuprimeiroapp/shared/widget/progress_indicator_page.dart';
+import '../../widget/progress_indicator_page.dart';
 
 class ImagePage extends StatefulWidget {
   const ImagePage({super.key});

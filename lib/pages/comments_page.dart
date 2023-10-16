@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/model/comment_model.dart';
 import 'package:meuprimeiroapp/repository/comments/comments_repository.dart';
 import 'package:meuprimeiroapp/repository/comments/impl/comments_dio_repository.dart';
-import 'package:meuprimeiroapp/shared/widget/progress_indicator_page.dart';
+import '../../widget/progress_indicator_page.dart';
 
 class CommentsPage extends StatefulWidget {
   final int postId;

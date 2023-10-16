@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meuprimeiroapp/shared/widget/navegatorBar_appBar.dart';
+import '../../widget/navegatorBar_appBar.dart';
 import 'package:meuprimeiroapp/services/app_storage.dart';
-import 'package:meuprimeiroapp/shared/widget/progress_indicator_page.dart';
-import 'package:meuprimeiroapp/shared/widget/text_label.dart';
+import '../../widget/progress_indicator_page.dart';
+import '../../widget/text_label.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

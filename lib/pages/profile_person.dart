@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:meuprimeiroapp/services/app_storage.dart';
-import 'package:meuprimeiroapp/shared/widget/text_label.dart';
+import '../../widget/text_label.dart';
 
 class ProfilePerson extends StatefulWidget {
   const ProfilePerson({super.key});

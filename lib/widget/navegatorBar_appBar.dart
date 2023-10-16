@@ -6,7 +6,7 @@ import 'package:meuprimeiroapp/pages/card_page.dart';
 import 'package:meuprimeiroapp/pages/consulta_cep.dart';
 import 'package:meuprimeiroapp/pages/image_page.dart';
 import 'package:meuprimeiroapp/pages/posts_page.dart';
-import 'package:meuprimeiroapp/shared/widget/custom_drawer.dart';
+import '../../../../widget/custom_drawer.dart';
 import 'package:line_icons/line_icons.dart';
 
 class BarraNavegacao extends StatefulWidget {
