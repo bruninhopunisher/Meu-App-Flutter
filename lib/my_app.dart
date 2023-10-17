@@ -8,6 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // localizationsDelegates: context.localizationDelegates,
+      // supportedLocales: context.supportedLocales,
+      // locale: context.locale,
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: GoogleFonts.latoTextTheme(),

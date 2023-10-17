@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:meuprimeiroapp/pages/login_page.dart';
 import 'package:meuprimeiroapp/pages/numeros_aleatorios_page.dart';
 import 'package:meuprimeiroapp/pages/profile_person.dart';
@@ -107,6 +109,40 @@ class CustomDrawer extends StatelessWidget {
                     );
                   },
                 ),
+                const Padding(padding: EdgeInsets.only(top: 25)),
+                ListTile(
+                  leading: const Icon(Icons.cancel),
+                  title: const Text(
+                    'INTL',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  onTap: () {
+                    var f = NumberFormat('#,###.00', 'en_US');
+                    var fBR = NumberFormat('##.0#', 'pt_BR');
+                    print(f.format(12345));
+                    print(fBR.format(12345));
+                  },
+                ),
+                // const Padding(padding: EdgeInsets.only(top: 25)),
+                // ListTile(
+                //   leading: const Icon(Icons.flag),
+                //   title: const Text(
+                //     'IDIOMA',
+                //     style: TextStyle(
+                //       fontSize: 20,
+                //     ),
+                //   ),
+                //   onTap: () {
+                //     if (context.locale.toString() == "pt_BR") {
+                //       context.setLocale(Locale('en', 'US'));
+                //     } else {
+                //       context.setLocale(Locale('pt', 'BR'));
+                //     }
+                //     Navigator.pop(context);
+                //   },
+                // ),
                 const Padding(padding: EdgeInsets.only(top: 25)),
                 ListTile(
                   leading: const Icon(Icons.cancel),

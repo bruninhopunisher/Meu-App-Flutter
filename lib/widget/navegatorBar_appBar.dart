@@ -1,11 +1,13 @@
 // ignore_for_file: file_names
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:meuprimeiroapp/pages/card_page.dart';
 import 'package:meuprimeiroapp/pages/consulta_cep.dart';
 import 'package:meuprimeiroapp/pages/image_page.dart';
 import 'package:meuprimeiroapp/pages/posts_page.dart';
+import 'package:meuprimeiroapp/pages/teste_pacotes.dart';
 import '../../../../widget/custom_drawer.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -18,13 +20,14 @@ class BarraNavegacao extends StatefulWidget {
 
 class _BottomNavigationBarExampleState extends State<BarraNavegacao> {
   int _selectedIndex = 0;
-  final String _name = 'Bruno';
+  // final String _name = 'Bruno';
 
   static final List<Widget> _widgetOptions = [
     const CardPage(),
     const PostsPage(),
     const ImagePage(),
     const ConsultaCEP(),
+    const TestesPacotes()
   ];
 
   @override
@@ -36,7 +39,7 @@ class _BottomNavigationBarExampleState extends State<BarraNavegacao> {
         extendBody: true,
         backgroundColor: const Color(0xFF820AD1),
         appBar: AppBar(
-          title: Text('Olá, $_name'),
+          title: Text("APP_TITLE".tr()),
           titleTextStyle: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
@@ -85,6 +88,9 @@ class _BottomNavigationBarExampleState extends State<BarraNavegacao> {
                 ),
                 GButton(
                   icon: LineIcons.getPocket,
+                ),
+                GButton(
+                  icon: LineIcons.addressBook,
                 ),
               ],
               selectedIndex: _selectedIndex,
