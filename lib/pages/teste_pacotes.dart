@@ -5,6 +5,7 @@ import 'package:battery_plus/battery_plus.dart';
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
@@ -25,21 +26,16 @@ class _TestesPacotesState extends State<TestesPacotes> {
   var battery = Battery();
   var statusBateria = '';
   final String _url = 'https://www.xpi.com.br/';
-  late StreamSubscription subscription;
 
   @override
   void initState() {
     super.initState();
     carregarBateria();
     Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      print(result);
+      if (kDebugMode) {
+        print(result);
+      }
     });
-  }
-
-  @override
-  dispose() {
-    subscription.cancel();
-    super.dispose();
   }
 
   carregarBateria() async {
@@ -166,8 +162,12 @@ class _TestesPacotesState extends State<TestesPacotes> {
               onTap: () async {
                 var directory = await getApplicationDocumentsDirectory();
                 var directoryTwo = await getDownloadsDirectory();
-                print(directory);
-                print(directoryTwo);
+                if (kDebugMode) {
+                  print(directory);
+                }
+                if (kDebugMode) {
+                  print(directoryTwo);
+                }
               },
             ),
             const Padding(padding: EdgeInsets.only(top: 16, bottom: 16)),
@@ -184,10 +184,18 @@ class _TestesPacotesState extends State<TestesPacotes> {
                 String packageName = packageInfo.packageName;
                 String version = packageInfo.version;
                 String buildNumber = packageInfo.buildNumber;
-                print(appName);
-                print(packageName);
-                print(version);
-                print(buildNumber);
+                if (kDebugMode) {
+                  print(appName);
+                }
+                if (kDebugMode) {
+                  print(packageName);
+                }
+                if (kDebugMode) {
+                  print(version);
+                }
+                if (kDebugMode) {
+                  print(buildNumber);
+                }
               },
             ),
             const Padding(padding: EdgeInsets.only(top: 16, bottom: 16)),
@@ -202,14 +210,20 @@ class _TestesPacotesState extends State<TestesPacotes> {
                 DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
                 if (Platform.isAndroid) {
                   AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-                  print('Running on ${androidInfo.model}');
+                  if (kDebugMode) {
+                    print('Running on ${androidInfo.model}');
+                  }
                 } else if (Platform.isIOS) {
                   IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-                  print('Running on ${iosInfo.utsname.machine}');
+                  if (kDebugMode) {
+                    print('Running on ${iosInfo.utsname.machine}');
+                  }
                 } else {
                   WebBrowserInfo webBrowserInfo =
                       await deviceInfo.webBrowserInfo;
-                  print('Running on ${webBrowserInfo.userAgent}');
+                  if (kDebugMode) {
+                    print('Running on ${webBrowserInfo.userAgent}');
+                  }
                 }
               },
             ),
@@ -225,19 +239,19 @@ class _TestesPacotesState extends State<TestesPacotes> {
                 final connectivityResult =
                     await (Connectivity().checkConnectivity());
                 if (connectivityResult == ConnectivityResult.mobile) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 } else if (connectivityResult == ConnectivityResult.wifi) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 } else if (connectivityResult == ConnectivityResult.ethernet) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 } else if (connectivityResult == ConnectivityResult.vpn) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 } else if (connectivityResult == ConnectivityResult.bluetooth) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 } else if (connectivityResult == ConnectivityResult.other) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 } else if (connectivityResult == ConnectivityResult.none) {
-                  print(connectivityResult);
+                  stdout.write(connectivityResult);
                 }
               },
             ),
@@ -251,7 +265,7 @@ class _TestesPacotesState extends State<TestesPacotes> {
               ),
               onTap: () async {
                 Position position = await _determinePosition();
-                print(position);
+                stdout.write(position);
               },
             ),
           ],
